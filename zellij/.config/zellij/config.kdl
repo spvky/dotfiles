@@ -1,0 +1,35 @@
+
+keybinds clear-defaults=true{
+    shared_except "locked" {
+        bind "Ctrl q" { Quit; }
+        bind "Alt n" { NewPane "Down"; }
+				bind "Alt r" { NewPane "Right"; }
+        bind "Alt h" { MoveFocusOrTab "Left"; }
+        bind "Alt l" { MoveFocusOrTab "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+        bind "Alt =" "Alt +" { Resize "Increase Up"; }
+        bind "Alt -" { Resize "Decrease Up"; }
+        bind "Alt [" { Resize "Increase Left"; }
+				bind "Alt ]" { Resize "Increase Right"; }
+				bind "Alt x" { CloseFocus;}
+				bind "Alt Down" { MovePane "Down";}
+				bind "Alt Right" { MovePane "Right";}
+				bind "Alt Up" { MovePane "Up";}
+				bind "Alt Left" { MovePane "Left";}
+				bind "Alt w" { TogglePaneEmbedOrFloating; }
+				bind "Alt e" { EditScrollback; }
+				bind "Alt t" {  NewTab; }
+        bind "Alt p" { ToggleFloatingPanes;}
+    }
+}
+
+plugins {
+    tab-bar { path "tab-bar"; }
+    status-bar { path "status-bar"; }
+    strider { path "strider"; }
+    compact-bar { path "compact-bar"; }
+}
+
+pane_frames false
+scrollback_editor "/usr/bin/vim"

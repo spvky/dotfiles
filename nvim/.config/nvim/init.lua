@@ -1,7 +1,7 @@
 require("spvky")
 require('onedark').load()
 vim.opt.termguicolors = true
-require("bufferline").setup{}
+-- require("bufferline").setup{}
 vim.opt.rnu = true
 vim.opt.autoindent = true
 vim.opt.tabstop = 2

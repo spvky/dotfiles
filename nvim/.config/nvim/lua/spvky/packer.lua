@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
 	use('vim-airline/vim-airline-themes')
 	use('tpope/vim-commentary')
 	use('bakudankun/pico-8.vim')
-	use{'akinsho/bufferline.nvim', tag = '*', requires = 'nvim-tree/nvim-web-devicons'}
+	-- use{'akinsho/bufferline.nvim', tag = '*', requires = 'nvim-tree/nvim-web-devicons'}
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',

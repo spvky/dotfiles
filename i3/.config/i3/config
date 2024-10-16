@@ -57,6 +57,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal -e zellij
 
+# create an empty container
+# bindsym $mod+t open
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -71,6 +74,12 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # Audio soruce toggle
 bindsym $mod+Shift+g exec --no-startup-id pactl set-default-sink alsa_output.usb-Jieli_Technology_CA-2890_USB_Speaker_Bar_433035313031372E-00.analog-stereo
 bindsym $mod+Shift+y exec --no-startup-id pactl set-default-sink alsa_output.usb-JBL_Quantum_600-00.analog-stereo
+
+# read 1 character and mark the current window with this character
+bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+
+# read 1 character and go to the window with the character
+bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 # change focus
 bindsym $mod+h focus left
@@ -149,6 +158,8 @@ assign [class="towerclimb"] $ws9
 assign [class="lunite"] $ws9
 assign [class="tripwire"] $ws9
 assign [class="unnamed-rpg"] $ws9
+for_window [class="golfman"] move window to mark a
+no_focus [all]
 
 
 # Remove title bars
@@ -223,7 +234,7 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+z mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

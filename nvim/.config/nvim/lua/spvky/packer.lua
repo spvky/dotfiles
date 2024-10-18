@@ -12,18 +12,21 @@ return require('packer').startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+	-- Theme
 	use 'navarasu/onedark.nvim'
+	-- Ooo baby
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('nvim-treesitter/playground')
+	-- Flexible marks
 	use('theprimeagen/harpoon')
 	use('mbbill/undotree')
+	-- Git integration
 	use('tpope/vim-fugitive')
 	use('rust-lang/rust.vim')
 	use('vim-airline/vim-airline')
 	use('vim-airline/vim-airline-themes')
 	use('tpope/vim-commentary')
 	use('bakudankun/pico-8.vim')
-	-- use{'akinsho/bufferline.nvim', tag = '*', requires = 'nvim-tree/nvim-web-devicons'}
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',

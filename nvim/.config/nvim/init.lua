@@ -10,7 +10,9 @@ vim.opt.smarttab = true
 vim.opt.softtabstop = 2
 vim.opt.hidden = true
 vim.opt.list = true
-vim.opt.mouse = ""
+-- Case insensitive searching
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 vim.g.rustfmt_autosave = 1
 vim.g.netrw_winsize = 30
 vim.keymap.set('n', '<C-w>', ':Lex<CR>')

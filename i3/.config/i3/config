@@ -147,19 +147,9 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-assign [class="deckbuilder-battle-royale"] $ws9
-assign [class="space-dream"] $ws9
-assign [class="onemllndllrs"] $ws9
-assign [class="rolly-marble"] $ws9
-assign [class="soul-of-adventure"] $ws9
-assign [class="moonshine"] $ws9
-assign [class="phys64"] $ws9
-assign [class="towerclimb"] $ws9
-assign [class="lunite"] $ws9
-assign [class="tripwire"] $ws9
-assign [class="unnamed-rpg"] $ws9
-for_window [class="golfman"] move window to mark a
+# Don't focus new windows
 no_focus [all]
+focus_on_window_activation none
 
 
 # Remove title bars
@@ -209,29 +199,34 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# bindsym $mod+[ resize shrink width 10 px or 10 ppt
+# bindsym $mod+= resize grow height 10 px or 10 ppt
+# bindsym $mod+- resize shrink height 10 px or 10 ppt
+# bindsym $mod+] resize grow width 10 px or 10 ppt
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+	bindsym j resize shrink width 10 px or 10 ppt
+		bindsym k resize grow height 10 px or 10 ppt
+		bindsym l resize shrink height 10 px or 10 ppt
+		bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+# same bindings, but for the arrow keys
+		bindsym Left resize shrink width 10 px or 10 ppt
+		bindsym Down resize grow height 10 px or 10 ppt
+		bindsym Up resize shrink height 10 px or 10 ppt
+		bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+# back to normal: Enter or Escape or $mod+r
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+		bindsym $mod+z mode "default"
 }
 
 bindsym $mod+z mode "resize"
@@ -241,3 +236,19 @@ bindsym $mod+z mode "resize"
 bar {
         status_command i3status
 }
+
+workspace_layout stacking
+
+# Open GUI projects in my dev-container
+assign [class="deckbuilder-battle-royale"] $ws9
+assign [class="space-dream"] $ws9
+assign [class="onemllndllrs"] $ws9
+assign [class="rolly-marble"] $ws9
+assign [class="soul-of-adventure"] $ws9
+assign [class="moonshine"] $ws9
+assign [class="phys64"] $ws9
+assign [class="towerclimb"] $ws9
+assign [class="lunite"] $ws9
+assign [class="tripwire"] $ws9
+assign [class="unnamed-rpg"] $ws9
+for_window [class="golfman"] move window to mark a

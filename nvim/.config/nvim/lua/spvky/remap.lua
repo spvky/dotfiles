@@ -11,10 +11,10 @@ function imap(shortcut, command)
 end
 
 vim.g.mapleader = ' '
-nmap("<C-h>",":bp<CR>")
-nmap("<C-l>",":bn<CR>")
+-- nmap("<C-h>",":bp<CR>")
+-- nmap("<C-l>",":bn<CR>")
 nmap("<leader>k","<C-w>k")
 nmap("<leader>h","<C-w>h")
 nmap("<leader>l","<C-w>l")
 nmap("<leader>j","<C-w>j")
-imap("%date","<Esc>:pu=strftime('%c')<CR>o")
+nmap("<S-h>","<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>")

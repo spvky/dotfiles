@@ -252,3 +252,4 @@ assign [class="lunite"] $ws9
 assign [class="tripwire"] $ws9
 assign [class="unnamed-rpg"] $ws9
 for_window [class="golfman"] move window to mark a
+for_window [class="bon-vivant"] move window to mark a

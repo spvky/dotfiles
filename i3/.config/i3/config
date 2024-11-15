@@ -55,7 +55,7 @@ exec --no-startup-id compton
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal -e zellij
+bindsym $mod+Return exec kitty -e zellij
 
 # create an empty container
 # bindsym $mod+t open

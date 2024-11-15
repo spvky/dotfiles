@@ -15,4 +15,3 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.g.rustfmt_autosave = 1
 vim.g.netrw_winsize = 30
-vim.keymap.set('n', '<C-w>', ':Lex<CR>')

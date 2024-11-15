@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
 	use('mbbill/undotree')
 	-- Git integration
 	use('tpope/vim-fugitive')
+	use ('adelarsq/vim-matchit')
 	use('rust-lang/rust.vim')
 	use('vim-airline/vim-airline')
 	use('vim-airline/vim-airline-themes')

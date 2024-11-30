@@ -23,4 +23,4 @@ nmap("<leader>j","<C-w>j")
 nmap("<leader>r","<C-w>r")
 nmap("<leader>R","<C-w>R")
 --  Open telescope buffer view, sorting by most recent, in normal mode
-nmap("<S-h>","<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>")
+nmap("<leader>b","<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>")

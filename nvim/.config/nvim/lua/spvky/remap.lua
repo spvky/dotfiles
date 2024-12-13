@@ -14,6 +14,8 @@ end
 -- Set the leader key to Space
 vim.g.mapleader = ' '
 
+-- File explorer
+nmap("-","<cmd>Oil<cr>")
 -- Navigate panes
 nmap("<leader>k","<C-w>k")
 nmap("<leader>h","<C-w>h")

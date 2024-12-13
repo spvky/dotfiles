@@ -48,9 +48,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Set our wallpaper
 exec --no-startup-id feh --bg-scale ~/g5.jpeg
 
-# Compton for terminal opacity
-exec --no-startup-id picom -b -f
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 

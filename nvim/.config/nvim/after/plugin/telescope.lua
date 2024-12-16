@@ -1,7 +1,16 @@
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>f', builtin.git_files, {})
-vim.keymap.set('n', '<leader>a', builtin.find_files, {})
-vim.keymap.set('n', '<leader>s', builtin.live_grep, { desc = 'Telescope live grep' })
+-- Fuzzyfind in the current repo
+vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
+-- Fuzzyfind in the current directory
+vim.keymap.set('n', '<leader>fa', builtin.find_files, {})
+-- Live Grep
+vim.keymap.set('n', '<leader>fs', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>",{ desc = 'Telescope buffer explorer'})
+-- vim.keymap.set('n', '<leader>fb', builtin.buffers, {
+-- 	sort_mru = true,
+-- 	sort_lastused = true,
+-- 	initial_mode= 'normal',
+-- })
 
 
 local telescope = require('telescope')

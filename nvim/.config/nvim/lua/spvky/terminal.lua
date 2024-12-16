@@ -1,13 +1,16 @@
 vim.api.nvim_create_autocmd('TermOpen', {
+	-- When opening a terminal, disable line numbers
 	callback = function ()
 		vim.opt.number = false
 		vim.opt.relativenumber = false
 	end,
 })
 
-vim.keymap.set('t', '<C-n>', "<C-\\><C-n>", {silent = true})
+-- Remap exit terminal mode to be less annoying
+vim.keymap.set('t', '<Esc>', "<C-\\><C-n>", {silent = true})
 
 local job_id = 0
+-- Opens a 10 row high terminal
 vim.keymap.set('n', '<leader>st', function()
 	vim.cmd.vnew()
 	vim.cmd.term()

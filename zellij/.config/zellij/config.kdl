@@ -1,7 +1,7 @@
 
 keybinds clear-defaults=true{
     shared_except "locked" {
-        bind "Ctrl q" { Quit; }
+        bind "Alt q" { Quit; }
         bind "Alt n" { NewPane "Down"; }
 				bind "Alt r" { NewPane "Right"; }
         bind "Alt h" { MoveFocusOrTab "Left"; }

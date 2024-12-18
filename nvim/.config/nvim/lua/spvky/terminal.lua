@@ -20,7 +20,7 @@ vim.keymap.set('n', '<leader>th', function()
 end)
 
 local vertical_terminal_id = 1
--- Opens a 10 row high terminal
+-- Opens a 50 row wide terminal
 vim.keymap.set('n', '<leader>tv', function()
 	vim.cmd.new()
 	vim.cmd.term()

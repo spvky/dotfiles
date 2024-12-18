@@ -15,23 +15,17 @@ return require('packer').startup(function(use)
 	-- Theme
 	use 'navarasu/onedark.nvim'
 	-- File Explorer
-	require("packer").startup(function()
   use({
     "stevearc/oil.nvim",
     config = function()
       require("oil").setup()
     end,
   })
-	end)
 	-- treesitter
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('nvim-treesitter/playground')
-	-- Flexible marks
-	use('theprimeagen/harpoon')
-	use('mbbill/undotree')
 	-- Git integration
 	use('tpope/vim-fugitive')
-	use ('adelarsq/vim-matchit')
 	use('rust-lang/rust.vim')
 	use('vim-airline/vim-airline')
 	use('vim-airline/vim-airline-themes')

@@ -48,6 +48,7 @@ function dots () {
 	else
 		echo "unrecognized command"
 	fi
+	cd -
 }
 
 function gac () {

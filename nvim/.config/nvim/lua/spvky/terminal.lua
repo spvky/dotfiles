@@ -1,3 +1,4 @@
+-- Terminal commands all start with <leader>t
 vim.api.nvim_create_autocmd('TermOpen', {
 	-- When opening a terminal, disable line numbers
 	callback = function ()

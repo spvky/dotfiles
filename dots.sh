@@ -8,7 +8,7 @@ if [ "$1" = "pull" ]; then
 elif [ "$1" = "push" ]; then
 	git add .
 	if ["$2" = ""]; then
-		git commit -m "$(date)"
+		git commit -m "Lazy Update $(date)"
 	else
 		git commit -m $2
 	fi

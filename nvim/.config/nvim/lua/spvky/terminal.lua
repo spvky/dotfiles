@@ -29,3 +29,5 @@ vim.keymap.set('n', '<leader>tv', function()
 	vim.api.nvim_win_set_width(0,50)
 	vertical_terminal_id = vim.bo.channel
 end)
+
+-- Floating terminal

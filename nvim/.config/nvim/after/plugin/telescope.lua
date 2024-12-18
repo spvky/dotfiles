@@ -1,12 +1,10 @@
 local builtin = require('telescope.builtin')
--- Fuzzyfind
-vim.keymap.set('n', '<leader>fa', builtin.find_files, {})
--- Git Fuzzyfind
-vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
--- Live Grep (requires `ripgrep` in the path)
+vim.keymap.set('n', '<leader>fa', builtin.find_files, {desc = 'Fuzzyfind all files in directory'})
+vim.keymap.set('n', '<leader>ff', builtin.git_files, {desc = 'Fuzzyfind files known to git in the current repo'})
 vim.keymap.set('n', '<leader>fs', builtin.live_grep, { desc = 'Telescope live grep' })
--- Buffer explorer
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {desc = 'Fuzzyfind help tags'})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffer explorer'})
+
 
 
 local telescope = require('telescope')

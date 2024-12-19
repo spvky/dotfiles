@@ -14,3 +14,11 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.g.rustfmt_autosave = 1
 vim.g.netrw_winsize = 30
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+callback = function()
+	desc = 'Highlight when yanking text'
+	vim.highlight.on_yank()
+end,
+})
+

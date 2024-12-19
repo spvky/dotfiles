@@ -35,6 +35,7 @@ function dots () {
 	cd "$HOME/dotfiles"
 	if [ "$1" = "pull" ]; then
 		git pull
+		source ./zshrc/.zshrc
 		echo "dotfiles have been pulled"
 	elif [ "$1" = "push" ]; then
 		git add .

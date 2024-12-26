@@ -15,12 +15,7 @@ return require('packer').startup(function(use)
 	-- Theme
 	use 'navarasu/onedark.nvim'
 	-- File Explorer
-  use({
-    "stevearc/oil.nvim",
-    config = function()
-      require("oil").setup()
-    end,
-  })
+  use "stevearc/oil.nvim"
 	-- treesitter
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('nvim-treesitter/playground')

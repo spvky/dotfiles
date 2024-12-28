@@ -46,6 +46,8 @@ function dots () {
 		fi
 		git push
 		echo "dotfiles have been pushed"
+	elif [ "$1" = "edit" ]; then
+		nvim
 	else
 		echo "unrecognized command"
 	fi

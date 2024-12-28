@@ -18,17 +18,17 @@ telescope.setup {
 		find_files = {
 			hidden = true,
 			file_ignore_patterns = {"^node_modules/"},
-			path_display = { 'smart' },
+			path_display = { shorten = 4 },
 		},
 		git_files = {
 			hidden = true,
 			file_ignore_patterns = {"^.git/", "^node_modules/", "^assets/", "^art/", "^.gitignore"},
-			path_display = { 'smart' },
+			path_display = { shorten =  4 },
 		},
 		live_grep = {
 			hidden = true,
 			file_ignore_patterns = {"^node_modules/"},
-			path_display = { 'smart' },
+			path_display = { shorten = 4 },
 		};
 	},
 	defaults = {

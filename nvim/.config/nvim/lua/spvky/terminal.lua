@@ -50,7 +50,13 @@ vim.keymap.set('n', '<leader>tr', function()
 	vim.fn.chansend(vertical_terminal_id, {"bacon run\r"})
 end)
 
-vim.keymap.set('n', '<leader>tc', function()
-	vim.fn.chanclose(vertical_terminal_id)
-	vim.fn.chanclose(short_terminal_id)
+-- do 'bacon run' in a horizontal terminal
+vim.keymap.set('n', '<leader>tR', function()
+	vim.cmd.new()
+	vim.cmd.term()
+	vim.cmd.wincmd('J')
+	vim.api.nvim_win_set_height(0,10)
+	vertical_terminal_id = vim.bo.channel
+	vim.cmd.wincmd('k')
+	vim.fn.chansend(vertical_terminal_id, {"bacon run\r"})
 end)

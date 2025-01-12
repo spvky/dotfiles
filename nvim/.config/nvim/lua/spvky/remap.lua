@@ -29,4 +29,7 @@ nmap("<C-j>","<cmd>cnext<CR>")
 nmap("<C-k>","<cmd>cprev<CR>")
 nmap("<leader>qo", "<cmd>cope<CR>")
 nmap("<leader>qq", "<cmd>ccl<CR>")
+-- Search Highlighting
+nmap("<leader>n", "<cmd>noh<CR>")
+
 nmap("<leader>bl","<C-^>")

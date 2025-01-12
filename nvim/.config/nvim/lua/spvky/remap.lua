@@ -27,4 +27,6 @@ nmap("<leader>R","<C-w>R")
 -- Navigate Quickfix
 nmap("<C-j>","<cmd>cnext<CR>")
 nmap("<C-k>","<cmd>cprev<CR>")
+nmap("<leader>qo", "<cmd>cope<CR>")
+nmap("<leader>qq", "<cmd>ccl<CR>")
 nmap("<leader>bl","<C-^>")

@@ -11,6 +11,10 @@ function imap(shortcut, command)
 	map('i',shortcut, command)
 end
 
+function vmap(shortcut, command)
+	map('v',shortcut, command)
+end
+
 -- Set the leader key to Space
 vim.g.mapleader = ' '
 
@@ -32,4 +36,10 @@ nmap("<leader>qq", "<cmd>ccl<CR>")
 -- Search Highlighting
 nmap("<leader>n", "<cmd>noh<CR>")
 
+-- Shortcuts for the blackhole register
+nmap("_","\"_")
+vmap("_","\"_")
+
+-- Shortcut to jump to last buffer
 nmap("<leader>bl","<C-^>")
+

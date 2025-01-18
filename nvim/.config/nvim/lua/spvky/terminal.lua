@@ -60,3 +60,25 @@ vim.keymap.set('n', '<leader>tR', function()
 	vim.cmd.wincmd('k')
 	vim.fn.chansend(vertical_terminal_id, {"bacon run\r"})
 end)
+
+-- do 'npm start' in a vertical terminal
+vim.keymap.set('n', '<leader>tj', function()
+	vim.cmd.new()
+	vim.cmd.term()
+	vim.cmd.wincmd('L')
+	vim.api.nvim_win_set_width(0,50)
+	vertical_terminal_id = vim.bo.channel
+	vim.cmd.wincmd('h')
+	vim.fn.chansend(vertical_terminal_id, {"npm start\r"})
+end)
+
+-- do 'npm start' in a horizontal terminal
+vim.keymap.set('n', '<leader>tJ', function()
+	vim.cmd.new()
+	vim.cmd.term()
+	vim.cmd.wincmd('J')
+	vim.api.nvim_win_set_height(0,10)
+	vertical_terminal_id = vim.bo.channel
+	vim.cmd.wincmd('k')
+	vim.fn.chansend(vertical_terminal_id, {"npm start\r"})
+end)

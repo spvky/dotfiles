@@ -43,3 +43,5 @@ vmap("_","\"_")
 -- Shortcut to jump to last buffer
 nmap("<leader>bl","<C-^>")
 
+
+

@@ -26,6 +26,7 @@ export BARTIB_FILE="/home/spooky/activities.bartib"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/spooky/.local/bin
 
 function docs () {
 	firefox --new-window docs.rs/$1

@@ -57,6 +57,28 @@ function dots () {
 	cd -
 }
 
+function notes () {
+	cd "$HOME/notes"
+	if [ "$1" = "pull" ]; then
+		git pull
+		echo "notes have been pulled"
+	elif [ "$1" = "push" ]; then
+		git add .
+		if [ "$2" = "" ]; then
+			git commit -m "Lazy Update $(date)"
+		else
+			git commit -m $2
+		fi
+		git push
+		echo "notes have been pushed"
+	elif [ "$1" = "edit" ]; then
+		nvim
+	else
+		echo "unrecognized command"
+	fi
+	cd -
+}
+
 function gac () {
 	message=\""$@"\"
 	git add -A && git commit -a -m "$message"

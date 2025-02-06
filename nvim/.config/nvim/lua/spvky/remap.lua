@@ -43,5 +43,9 @@ vmap("_","\"_")
 -- Shortcut to jump to last buffer
 nmap("<leader>bl","<C-^>")
 
+-- Notes hotkeys
+nmap("<leader>nf", ":Telekasten find_notes<cr>");
+nmap("<leader>nn", ":Telekasten new_note<cr>");
+
 
 

@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
 	use('vim-airline/vim-airline-themes')
 	use('tpope/vim-commentary')
 	use('bakudankun/pico-8.vim')
+	use('ziglang/zig.vim')
 	-- Notes
   use {
     'renerocksai/telekasten.nvim',

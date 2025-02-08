@@ -19,6 +19,7 @@ alias snes="flatpak run com.snes9x.Snes9x"
 alias zola="flatpak run org.getzola.zola"
 alias zr="zig run"
 alias zt="zig test"
+alias zbr="zig build run"
 
 export ZSH="$HOME/.oh-my-zsh"
 export DENO_INSTALL="/home/spooky/.deno"

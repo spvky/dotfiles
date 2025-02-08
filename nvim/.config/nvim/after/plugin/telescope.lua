@@ -22,7 +22,7 @@ telescope.setup {
 		},
 		git_files = {
 			hidden = true,
-			file_ignore_patterns = {"^.git/", "^node_modules/", "^assets/", "^art/", "^.gitignore", "^Cargo.lock", "^.zig"},
+			file_ignore_patterns = {"^.git/", "^node_modules/", "^assets/", "^art/", "^.gitignore", "^Cargo.lock", "^.zig", "^zig"},
 			path_display = { shorten =  4 },
 		},
 		live_grep = {

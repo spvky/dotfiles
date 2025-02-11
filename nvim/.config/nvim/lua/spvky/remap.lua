@@ -47,5 +47,6 @@ nmap("<leader>bl","<C-^>")
 nmap("<leader>nf", ":Telekasten find_notes<cr>");
 nmap("<leader>nn", ":Telekasten new_note<cr>");
 
-
+-- Fold based on a bracket at the end of the line
+vim.keymap.set('n', '<leader>zf', '$zf%')
 

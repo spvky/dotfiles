@@ -17,7 +17,7 @@ telescope.setup {
 		},
 		find_files = {
 			hidden = true,
-			file_ignore_patterns = {"^node_modules/"},
+			file_ignore_patterns = {"^node_modules/","^.git/"},
 			path_display = { shorten = 4 },
 		},
 		git_files = {

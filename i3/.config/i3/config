@@ -185,7 +185,7 @@ bindsym $mod+Shift+o workspace 10; exec --no-startup-id exec ~/Emulation/PS1/Duc
 # Open ps2
 bindsym $mod+Shift+v workspace 10; exec --no-startup-id exec ~/Emulation/PS2/pcsx2-v1.7.5430-linux-appimage-x64-Qt.AppImage
 # Open Furnace
-# bindsym $mod+Shift+f workspace 7; exec --no-startup-id exec flatpak run org.tildearrow.furnace
+bindsym $mod+Shift+f workspace 7; exec --no-startup-id exec flatpak run org.tildearrow.furnace
 # take a screenshot
 bindsym $mod+Shift+t exec "flameshot gui"
 bindsym $mod+Shift+p exec "peek"
@@ -255,3 +255,5 @@ for_window [class="oburyo"] move window to mark a
 for_window [class="tiny-tactics"] move window to mark a
 for_window [class="little-ghost"] move window to mark a
 for_window [class="fortresslovakia"] move window to mark a
+for_window [class="brackeys 2025"] move window to mark a
+for_window [class="search-action"] move window to mark a

@@ -2,6 +2,7 @@ require("spvky")
 require('onedark').load()
 require("oil").setup()
 vim.opt.termguicolors = true
+vim.opt.spr = true
 vim.opt.rnu = true
 vim.opt.number = true
 vim.opt.autoindent = true

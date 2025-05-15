@@ -48,6 +48,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Set our wallpaper
 exec --no-startup-id feh --bg-scale ~/lanterns.jpeg
 
+# Set our virtual monitors
+exec --no-startup-id xrandr --setmonitor display-1 2270/526x1440/334+0+0 HDMI-2 --setmonitor display-2 1170/271x1440/334+2270+0 none
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -258,3 +261,4 @@ for_window [class="fortresslovakia"] move window to mark a
 for_window [class="brackeys 2025"] move window to mark a
 for_window [class="search action"] move window to mark a
 for_window [class="phytopothecary"] move window to mark a
+for_window [class="maths"] move window to mark a

@@ -14,6 +14,7 @@ vim.opt.hidden = true
 vim.opt.list = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.cursorline = true
 vim.g.rustfmt_autosave = 1
 vim.g.netrw_winsize = 30
 

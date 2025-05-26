@@ -4,7 +4,7 @@ lsp.preset('recommended')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {'eslint', 'gopls', 'rust_analyzer', 'luau_lsp', 'lua_ls', 'clangd'},
+	ensure_installed = {'eslint', 'gopls', 'rust_analyzer', 'luau_lsp', 'lua_ls', 'clangd', 'ols'},
 	handlers = {
 		lsp.default_setup,
 	}
@@ -34,6 +34,10 @@ cmp.setup({
 lsp.on_attach(function(client, bufnr)
 	local opts = {buffer= bufnr, remap = false}
 
+	vim.keymap.set("n", "gv", function()
+		vim.cmd(":vsplit")
+		vim.lsp.buf.definition()
+	end, opts)
 	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 	vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)

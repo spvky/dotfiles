@@ -20,6 +20,7 @@ alias zola="flatpak run org.getzola.zola"
 alias zr="zig build run"
 alias zt="zig build test"
 alias zb="zig build"
+alias book="firefox ~/Downloads/odin_book.html"
 
 export ZSH="$HOME/.oh-my-zsh"
 export DENO_INSTALL="/home/spooky/.deno"
@@ -30,6 +31,8 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/spooky/.local/bin
+export PATH=$PATH:/home/spooky/.local/bin/odin
+export PATH=$PATH:/home/spooky/tools
 
 function docs () {
 	firefox --new-window docs.rs/$1
@@ -39,7 +42,6 @@ function dots () {
 	cd "$HOME/dotfiles"
 	if [ "$1" = "pull" ]; then
 		git pull
-		source ./zshrc/.zshrc
 		echo "dotfiles have been pulled"
 	elif [ "$1" = "push" ]; then
 		git add .

@@ -6,7 +6,6 @@ end
 function nmap(shortcut, command)
 	map('n',shortcut, command)
 end
-
 function imap(shortcut, command)
 	map('i',shortcut, command)
 end
@@ -49,4 +48,6 @@ nmap("<leader>nn", ":Telekasten new_note<cr>");
 
 -- Fold based on a bracket at the end of the line
 vim.keymap.set('n', '<leader>zf', '$zf%')
+
+
 

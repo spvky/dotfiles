@@ -105,6 +105,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+bindsym $mod+ctrl+Right exec --no-startup-id xrandr --delmonitor display-1; exec --no-startup-id xrandr --delmonitor display-2
+bindsym $mod+ctrl+Left exec --no-startup-id xrandr --setmonitor display-1 2270/526x1440/334+0+0 HDMI-2 --setmonitor display-2 1170/271x1440/334+2270+0 none
+
 # split in horizontal orientation
 bindsym $mod+c split h
 

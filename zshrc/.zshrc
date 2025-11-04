@@ -2,6 +2,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
 alias wrun="cargo watch -q -c -w src/ -x run"
 alias wtest="cargo watch -q -c -w test/ -x run"
 alias vi3="nvim ~/.config/i3/config"
@@ -27,11 +29,13 @@ export DENO_INSTALL="/home/spooky/.deno"
 export SOME_SHIT="SOME FUC KIN SHIT"
 export FLYCTL_INSTALL="/home/spooky/.fly"
 export BARTIB_FILE="/home/spooky/activities.bartib"
+export EMSDK_QUIET=1
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/spooky/.local/bin
 export PATH=$PATH:/home/spooky/.local/bin/odin
+export PATH=$PATH:/home/spooky/.local/bin/zig
 export PATH=$PATH:/home/spooky/tools
 
 function docs () {
@@ -109,5 +113,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-
+source ~/tools/emsdk/emsdk_env.sh
 . "$HOME/.limbo/env"

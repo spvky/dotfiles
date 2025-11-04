@@ -4,11 +4,20 @@ lsp.preset('recommended')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {'eslint', 'gopls', 'rust_analyzer', 'luau_lsp', 'lua_ls', 'clangd', 'ols'},
+	ensure_installed = {'eslint', 'gopls', 'rust_analyzer', 'luau_lsp', 'lua_ls', 'clangd'},
 	handlers = {
 		lsp.default_setup,
 	}
 })
+
+require'lspconfig'.ols.setup {
+	init_options = {
+		checker_args = "-strict-style",
+		collections = {
+			{ name = "shared", path = vim.fn.expand('$HOME/odin-lib') }
+		},
+	},
+}
 
 
 local cmp = require('cmp')
@@ -34,7 +43,7 @@ cmp.setup({
 lsp.on_attach(function(client, bufnr)
 	local opts = {buffer= bufnr, remap = false}
 
-	vim.keymap.set("n", "gv", function()
+	vim.keymap.set("n", "<leader>gv", function()
 		vim.cmd(":vsplit")
 		vim.lsp.buf.definition()
 	end, opts)

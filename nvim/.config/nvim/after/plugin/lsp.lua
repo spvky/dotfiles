@@ -4,20 +4,20 @@ lsp.preset('recommended')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {'eslint', 'gopls', 'rust_analyzer', 'luau_lsp', 'lua_ls', 'clangd'},
+	ensure_installed = {'luau_lsp', 'lua_ls', 'clangd', 'ols'},
 	handlers = {
 		lsp.default_setup,
 	}
 })
 
-require'lspconfig'.ols.setup {
-	init_options = {
-		checker_args = "-strict-style",
-		collections = {
-			{ name = "shared", path = vim.fn.expand('$HOME/odin-lib') }
-		},
-	},
-}
+-- vim.lsp.config.ols.setup {
+-- 	init_options = {
+-- 		checker_args = "-strict-style",
+-- 		collections = {
+-- 			{ name = "shared", path = vim.fn.expand('$HOME/odin-lib') }
+-- 		},
+-- 	},
+-- }
 
 
 local cmp = require('cmp')

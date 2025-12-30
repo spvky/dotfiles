@@ -134,11 +134,6 @@ _G.packer_plugins = {
     path = "/home/spvky/.local/share/nvim/site/pack/packer/start/pico-8.vim",
     url = "https://github.com/bakudankun/pico-8.vim"
   },
-  playground = {
-    loaded = true,
-    path = "/home/spvky/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
-  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/spvky/.local/share/nvim/site/pack/packer/start/plenary.nvim",

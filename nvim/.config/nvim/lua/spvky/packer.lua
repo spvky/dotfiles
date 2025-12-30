@@ -18,7 +18,6 @@ return require('packer').startup(function(use)
   use "stevearc/oil.nvim"
 	-- treesitter
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use('nvim-treesitter/playground')
 	-- Git integration
 	use('tpope/vim-fugitive')
 	use('rust-lang/rust.vim')

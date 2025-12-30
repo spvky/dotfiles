@@ -93,14 +93,13 @@ require('lazy').setup {
 		'stevearc/oil.nvim',
 		event = 'VimEnter',
 		keys = { '-', '<cmd>Oil<CR>', desc = 'Open the file explorer', 'n'},
-		opts = {
-			skip_confirm_for_simple_edits = true,
-			view_options = {
-				show_hidden = true
-			}
-		},
 		config = function()
-			require('oil').setup()
+			require('oil').setup {
+			skip_confirm_for_simple_edits = true,
+				view_options = {
+					show_hidden = true
+				}
+			}
 			vim.keymap.set('n', '-', '<cmd>Oil<CR>')
 		end,
 	},

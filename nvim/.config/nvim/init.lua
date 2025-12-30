@@ -29,6 +29,7 @@ vim.keymap.set('n','<leader>qq', '<cmd>ccl<CR>',{desc = 'Close quickfix'})
 vim.keymap.set('n','<leader>qp', '<cmd>colder<CR>',{desc = 'Previous quickfix list'})
 vim.keymap.set('n','<leader>qn', '<cmd>cnewer<CR>',{desc = 'Next quickfix list'})
 vim.keymap.set('n','<leader>ql', '<cmd>chistory<CR>',{desc = 'Show quickfix history'})
+vim.keymap.set('n', '<leader>qd', vim.diagnostic.setqflist, { desc = 'Open diagnostic [Q]uickfix list' })
 -- > Search
 vim.keymap.set('n', '<Esc>', '<cmd>nohl<CR>', {desc = 'Remove search highlight'})
 -- > Last Buffer
@@ -411,7 +412,7 @@ require('lazy').setup {
     main = 'nvim-treesitter.config', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'odin' },
+      ensure_installed = { 'bash', 'c', 'jsonc', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'odin' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {

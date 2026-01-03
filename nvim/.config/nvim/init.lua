@@ -37,6 +37,10 @@ vim.keymap.set('n', '<leader>bl', '<C-^>', {desc = 'Jump to last buffer'})
 --	Folding
 vim.keymap.set('n', '<leader>zf', '$zf%', {desc = 'Fold based on bracket at the end of the line'})
 
+-- > Ergonomics
+vim.keymap.set('n',';',':')
+vim.keymap.set('c', 'time', '<cmd>put=strftime(\'%c\')<CR>')
+
 -- Simple Autocommands
 vim.api.nvim_create_autocmd('TextYankPost', {
 callback = function()

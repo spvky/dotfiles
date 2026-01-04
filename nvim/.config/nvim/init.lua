@@ -39,7 +39,7 @@ vim.keymap.set('n', '<leader>zf', '$zf%', {desc = 'Fold based on bracket at the 
 
 -- > Ergonomics
 vim.keymap.set('n',';',':')
-vim.keymap.set('c', 'time', '<cmd>put=strftime(\'%c\')<CR>')
+vim.keymap.set('c', 'timen', '<cmd>put=strftime(\'%c\')<CR>')
 
 -- Simple Autocommands
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -49,18 +49,8 @@ callback = function()
 end,
 })
 
--- Formatting
-local autocmd_group = vim.api.nvim_create_augroup("Formatting auto-commands", { clear = true })
+require("odin")
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-    pattern = { "*.odin" },
-    desc = "Auto-format .odin files after saving",
-    callback = function()
-        local fileName = vim.api.nvim_buf_get_name(0)
-        vim.cmd(":silent !odinfmt -w " .. fileName)
-    end,
-    group = autocmd_group,
-})
 
 -- Setup lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

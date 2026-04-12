@@ -51,6 +51,7 @@ end,
 })
 
 require("odin")
+require("jai")
 
 
 -- Setup lazy
@@ -98,6 +99,7 @@ require('lazy').setup {
 			vim.keymap.set('n', '-', '<cmd>Oil<CR>')
 		end,
 	},
+	'rluba/jai.vim',
 	{
 		'nvim-telescope/telescope.nvim',
 		event = 'VimEnter',
@@ -419,7 +421,7 @@ require('lazy').setup {
     main = 'nvim-treesitter.config', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'jsonc', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'odin' },
+      ensure_installed = { 'bash', 'c', 'jsonc', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'odin', 'jai' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -540,6 +542,24 @@ require('lazy').setup {
     },
   },
 }
+
+-- Jai stuff
+vim.filetype.add({ extension = { jai = "jai" } })
+vim.api.nvim_create_autocmd("FileType", {
+		pattern = "jai",
+		callback = function()
+				-- Append custom format to the existing one
+				vim.opt_local.errorformat:prepend("%f:%l\\,%v: %\\a:%m,")
+		end,
+})
+vim.lsp.config.jails = {
+		capabilities = capabilities,
+		cmd = { "/usr/bin/jai/tools/jails" },
+		root_markers = { ".git", "build.jai", "main.jai" },
+		filetypes = { "jai" },
+}
+vim.lsp.enable({ "jails" })
+--- End Jai
 
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = vim.schedule_wrap(function(data)

@@ -37,9 +37,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohl<CR>', {desc = 'Remove search highlight'}
 vim.keymap.set('n', '<leader>bl', '<C-^>', {desc = 'Jump to last buffer'})
 --	Folding
 vim.keymap.set('n', '<leader>zf', '$zf%', {desc = 'Fold based on bracket at the end of the line'})
-
+vim.keymap.set("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", {noremap=true})
 -- > Ergonomics
-vim.keymap.set('n',';',':')
 vim.keymap.set('c', 'timen', '<cmd>put=strftime(\'%c\')<CR>')
 
 -- Simple Autocommands
@@ -98,6 +97,12 @@ require('lazy').setup {
 			}
 			vim.keymap.set('n', '-', '<cmd>Oil<CR>')
 		end,
+	},
+	{
+		"rmagatti/goto-preview",
+		dependencies = { "rmagatti/logger.nvim" },
+		event = "BufEnter",
+		config = true, -- necessary as per https://github.com/rmagatti/goto-preview/issues/88
 	},
 	'rluba/jai.vim',
 	{
@@ -203,6 +208,7 @@ require('lazy').setup {
       --    That is to say, every time a new file is opened that is associated with
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
       --    function will be executed to configure the current buffer
+
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -252,6 +258,8 @@ require('lazy').setup {
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
           map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
+          map('K', vim.lsp.buf.hover, 'Show description')
+
 
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client

@@ -561,8 +561,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		end,
 })
 vim.lsp.config.jails = {
-		capabilities = capabilities,
-		cmd = { "/usr/bin/jai/tools/jails" },
+		cmd = { "jails" },
 		root_markers = { ".git", "build.jai", "main.jai" },
 		filetypes = { "jai" },
 }
